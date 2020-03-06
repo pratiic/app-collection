@@ -21,24 +21,24 @@ public class Welcome implements ActionListener {
 
 
 		t1 = new JTextField();
-		t1.setMaximumSize( new Dimension(Integer.MAX_VALUE, t1.getPreferredSize().height) );
+		t1.setMaximumSize( new Dimension(Integer.MAX_VALUE, t1.getPreferredSize().height)); //looked up from the internet
 
 		b1 = new JButton("Get In");
 		b1.addActionListener(this);
 
 		f1.setLayout(new BoxLayout(f1.getContentPane(), BoxLayout.Y_AXIS));
 		
-		f1.getContentPane().add(l1);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 50)));
+		f1.add(l1);
+		f1.add(Box.createRigidArea(new Dimension(0, 50)));
 
-		f1.getContentPane().add(l2);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 20)));
+		f1.add(l2);
+		f1.add(Box.createRigidArea(new Dimension(0, 20)));
 
-		f1.getContentPane().add(t1);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 10)));
+		f1.add(t1);
+		f1.add(Box.createRigidArea(new Dimension(0, 10)));
 		
-		f1.getContentPane().add(b1);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 10)));
+		f1.add(b1);
+		f1.add(Box.createRigidArea(new Dimension(0, 10)));
 		
 		f1.setVisible(true);
 		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,12 +50,12 @@ public class Welcome implements ActionListener {
 		}
 		else {
 			name = t1.getText();
-			Menu m = new Menu();
 			f1.dispose();
+			Menu m = new Menu();
 
 		}
 	}
 	public static void main(String [] args) {
-		Welcome m = new Welcome();
+		Welcome w = new Welcome();
 	}
 }

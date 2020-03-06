@@ -5,7 +5,7 @@ import java.awt.event.*;
 class Menu implements ActionListener {
 	JFrame f1;
 	JLabel l1, choose;
-	JButton calculator, textEditor, draw;
+	JButton calculator, draw, textEditor;
 	String name;
 	void setName() {
 		Welcome w1 = new Welcome();
@@ -22,25 +22,29 @@ class Menu implements ActionListener {
 
 		choose = new JLabel("CHOOSE AN APP");
 
-		calculator = new JButton("Calculator");
+		//calc = new JButton("Calculator");
 
-		textEditor = new JButton("Text Editor");
+		calculator = new JButton("Calculator");
 
 		draw = new JButton("Drawing Board");
 
+		textEditor = new JButton("Text Editor");
+
 		f1.setLayout(new BoxLayout(f1.getContentPane(), BoxLayout.Y_AXIS));
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(100, 0)));
+		f1.add(Box.createRigidArea(new Dimension(100, 0)));
 		f1.add(l1);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 30)));
+		f1.add(Box.createRigidArea(new Dimension(0, 30)));
 		f1.add(choose);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 50)));
+		f1.add(Box.createRigidArea(new Dimension(0, 50)));
 		f1.add(calculator);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 50)));
+		f1.add(Box.createRigidArea(new Dimension(0, 50)));
 		f1.add(textEditor);
-		f1.getContentPane().add(Box.createRigidArea(new Dimension(0, 50)));
+		f1.add(Box.createRigidArea(new Dimension(0, 50)));
 		f1.add(draw);
 
+
 		draw.addActionListener(this);
+		calculator.addActionListener(this);
 		textEditor.addActionListener(this);
 
 		f1.setVisible(true);
@@ -53,6 +57,10 @@ class Menu implements ActionListener {
 			//f1.dispose();
 			DrawIt d = new DrawIt();
 		}
+		if (e.getSource() == calculator) {
+			//f1.dispose();
+			Calculator c = new Calculator();
+		}
 		if (e.getSource() == textEditor) {
 			//f1.dispose();
 			TextEditor t = new TextEditor();
@@ -60,6 +68,7 @@ class Menu implements ActionListener {
 	}
 
 	public static void main(String [] args) {
-
+		//Menu m = new Menu();
+		Welcome w = new Welcome();
 	}
 }

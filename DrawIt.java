@@ -5,9 +5,6 @@ import java.awt.Graphics;
 
 class DrawIt implements ActionListener, MouseMotionListener {
 	JFrame f;
-	/*JMenuBar menubar;
-	JMenu color;
-	JRadioButtonMenuItem red, green, yellow, blue, orange;*/
 	JLabel x, y, w, h, str, strt, startAngle, arcAngle;
 	JTextField xpos, ypos, width, height, stringValue, startangle, arcangle;
 	JButton rect, oval, clear, stringg, arc;
@@ -15,14 +12,9 @@ class DrawIt implements ActionListener, MouseMotionListener {
 	DrawIt() {
 		f = new JFrame("paint");
 		f.setSize(800, 750);
+		f.getContentPane().setBackground(Color.WHITE);
 
-		/*menubar = new JMenuBar();
-		color = new JMenu("color");
-		red = new JRadioButtonMenuItem("red");
-		green = new JRadioButtonMenuItem("green");
-		yellow = new JRadioButtonMenuItem("yellow");
-		blue = new JRadioButtonMenuItem("blue");
-		orange = new JRadioButtonMenuItem("orange");*/
+
 
 		xpos = new JTextField("0");
 		ypos = new JTextField("0");
@@ -96,24 +88,8 @@ class DrawIt implements ActionListener, MouseMotionListener {
 		f.add(arc);
 		f.add(clear);
 		
-		
-		
-		
-		
-		
-		
-		
-
-
-		//f.setLayout(new FlowLayout(FlowLayout.LEFT));
 		f.setLayout(null);
 		f.setVisible(true);
-
-		/*red.addActionListener(this);
-		green.addActionListener(this);
-		yellow.addActionListener(this);
-		blue.addActionListener(this);
-		orange.addActionListener(this);*/
 
 		f.addMouseMotionListener(this);
 
@@ -122,16 +98,7 @@ class DrawIt implements ActionListener, MouseMotionListener {
 		clear.addActionListener(this);
 		stringg.addActionListener(this);
 		arc.addActionListener(this);
-
-
-		drawLine();
 		
-
-	}
-
-	public void drawLine() {
-		Graphics g = f.getGraphics();
-		g.drawLine(200, 200, 300, 300);
 	}
 
 	public void mouseDragged(MouseEvent e) {
@@ -202,6 +169,7 @@ class DrawIt implements ActionListener, MouseMotionListener {
 	}
 
 	public static void main(String [] args) {
-		DrawIt d = new DrawIt();
+		//DrawIt d = new DrawIt();
+		Welcome w = new Welcome();
 	}
 }
